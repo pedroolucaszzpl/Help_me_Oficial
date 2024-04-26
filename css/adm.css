@@ -2,6 +2,9 @@
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
  }
+ a{
+    text-decoration: none;
+ }
  body {
      display: flex;
      justify-content: center;
@@ -130,10 +133,6 @@
      
   }
   
-  a {
-     margin: 10px;
-     padding: 10px;
-  }
   
   label{
      color: #000;
@@ -198,8 +197,11 @@
      justify-content: center;
      width: 400px;
   }
- 
   
+  .name{
+    color: white;
+    font-size: 16px;
+  }
   @media only screen and (max-width: 768px) {
      .form {
          margin: 10px 0; 

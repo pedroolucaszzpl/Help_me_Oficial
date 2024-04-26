@@ -29,9 +29,6 @@ if (!isset($_SESSION["moderador_id"]) && !isset($_SESSION["moderador_id"])) {
                     <img src="img/logo.png" alt="Logo Help Me">
                 </a>
             </div>
-            <div class='logout'>
-                <a href='#' onclick='confirmLogout()'>Sair</a>
-            </div>
             <div class="avatar">
                 <img src="img/moderador.png" alt="Avatar">
                 <?php
@@ -39,20 +36,20 @@ if (isset($_SESSION['nome_user'])) {
     echo $_SESSION['nome_user'];
 } else {
     include 'conexao.php'; // Certifique-se de incluir o arquivo de conexão
-
+    
     // Certifique-se de ter o ID do moderador na sessão
     $moderador_id = isset($_SESSION['moderador_id']) ? $_SESSION['moderador_id'] : null;
-
+    
     if ($moderador_id) {
         // Consulta para obter o nome do moderador com base no ID
         $sql_moderador = "SELECT moderador_usuario FROM moderador WHERE moderador_id = $moderador_id";
-
+        
         // Executa a consulta
         $resultado_moderador = $mysqli->query($sql_moderador);
-
+        
         if ($resultado_moderador && $resultado_moderador->num_rows > 0) {
             $row_moderador = $resultado_moderador->fetch_assoc();
-            echo "<p class='name'>" . $row_moderador['moderador_usuario'] . "</p>";
+            echo "<p class='name'>Seja bem-vindo moderador(a) " . $row_moderador['moderador_usuario'] . "</p>";
         } else {
             echo "Nome de moderador não encontrado";
         }
@@ -61,9 +58,16 @@ if (isset($_SESSION['nome_user'])) {
     }
 }
 ?>
+<div class="cad">
+    <img src="img/useradd.png" alt="">
+    <p class="name"><a href="admcad.php">Cadastre um novo moderador!</a></p>
+</div>
+<div class='logout'>
+    <a href='#' onclick='confirmLogout()'>Sair</a>
+</div>
 
 
-            </div>
+</div>
         </div>
         <div class="navigation">
             
