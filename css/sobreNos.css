@@ -1,0 +1,325 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+nav img {
+    width: 120px;
+    float: left; 
+    margin-left: 55px;
+}
+footer {
+    background-color: #cac1f3;
+    color: #fff;
+    position: sticky;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: -299px;
+    width: 100%;
+}
+.efetualog {
+    margin-right: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 30px;
+    border-radius: 15px;
+}
+
+.efetualog img {
+    width: 20px;
+    margin-right: 15px;
+}
+
+
+.efetualog a{
+    margin-right: 90px;
+    color: #301934;
+    font-weight: bold;
+    text-decoration: none;
+}
+/* footer inicio */
+
+/* término footer */
+/* Barra de Pesquisa */
+
+
+
+.efetualog:hover{
+    background-color: #cac1fe;
+}
+.contate a {
+    text-decoration: none;
+    padding: 14px 16px;
+    text-align: center;
+    display: inline-block; 
+    font-weight: bold;
+    color: #301934;
+}
+
+.contate a:hover {
+    border-radius: 20px;
+    background-color: #f3efef;
+    color: #857dd1;
+    font-weight: bold;
+}
+.contate{
+    display: flex;
+    flex-direction: row ;
+    align-items: center;
+}
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-box input[type="text"] {
+    padding: 5px;
+    border: 1px solid #cac1fe; /* Cor da borda roxa */
+    border-radius: 5px;
+}
+
+.search-box button {
+    padding: 5px 10px;
+    background-color: #cac1fe; /* Cor de fundo roxa */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+svg {
+    margin: 0;
+    width: 100%;
+    fill: #cac1f3;
+}
+nav {
+    width: 100%;
+    height: 90px;
+    background-color: #fff;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(50, 16, 202, 0.856);
+}
+#conteudo {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 90px;
+    text-align: justify;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: hsl(300, 100%, 25%);
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 1.6;
+    color:black;
+}
+
+
+.contate a {
+    text-decoration: none;
+    padding: 14px 16px;
+    text-align: center;
+    display: inline-block; 
+    font-weight: bold;
+    color: #301934;
+}
+
+.contate a:hover {
+    border-radius: 20px;
+    background-color: #f3efef;
+    color: #857dd1;
+    font-weight: bold;
+}
+
+.contate {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tx-1 {
+    float: right; 
+    display: flex;
+    margin-right: 40px ;
+    align-items: center;
+    justify-content: center;
+}
+
+.tx-1 a {
+    background-color: #785dd1;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 16px;
+    text-align: center;
+    display: inline-block; 
+    font-weight: bold;
+}
+
+.tx-1 a:hover {
+    background-color: #301934;
+}
+
+#conteudo {
+    margin-bottom: 300px;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 90px;
+    text-align: justify;
+}
+
+
+
+#criadores {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.criador-container {
+    position: relative;
+    margin: 0 10px;
+    overflow: hidden;
+}
+
+.criador {
+    border-radius: 50%;
+    width: 130px; /* Aumente o tamanho da imagem */
+    height: 150px; /* Aumente o tamanho da imagem */
+    transition: transform 0.3s ease-in-out;
+    border: 5px solid #785dd1; /* Adiciona uma borda sólida de 3px com a cor #785dd1 */
+}
+
+.criador-container:hover .criador {
+    transform: scale(1.1);
+}
+
+.criador-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(180, 124, 217, 0.893);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.criador-container:hover .criador-overlay {
+    opacity: 1;
+}
+
+.criador-text {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* sessão profissionais */
+
+/* Estilo da seção de profissionais */
+.profissionais {
+    margin-bottom: 90%; /* Aumenta o espaço entre o conteúdo acima e a seção de profissionais */
+    background-color: #f9f9f9; /* Cor de fundo mais clara */
+    width: 90%;
+    max-width: 1200px; /* Limita a largura máxima da seção */
+    border-radius: 35px;
+    padding: 40px 20px; /* Adiciona mais espaço interno */
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(101, 70, 214, 0.651);
+    transition: transform 0.3s ease;
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+/* Layout responsivo dos perfis */
+.perfis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px; /* Espaçamento maior entre os perfis */
+    justify-content: center; /* Centraliza os perfis horizontalmente */
+}
+
+/* Estilo individual dos perfis */
+.person {
+    background-color: #ffffff;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 2px 2px 6px rgba(101, 70, 214, 0.651);
+    transition: transform 0.3s ease;
+}
+
+.person:hover {
+    transform: translateY(-5px);
+}
+
+.person img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.nome {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.desc {
+    font-size: 16px;
+    text-align: center;
+    color: #555555;
+}
+/* video */
+#video2 {
+    width: 100%;
+    /* Ajuste a largura conforme necessário */
+    margin: 0 auto;
+    /* Isso centraliza o elemento */
+}
+
+video {
+    margin-bottom: 50px;
+    width: 100%;
+    height: auto;
+    /* Isso mantém a proporção do vídeo */
+}
