@@ -23,6 +23,8 @@
             </div>
         </div>
     </header>
+    
+   
     <div id="conteudo">
         <div>
             
@@ -41,6 +43,7 @@
 </br>
 </br>
 </br>
+   
 
         <div id="avaliacao">
             <img src="img/avaliação.png" alt="avaliacao">
@@ -61,6 +64,7 @@
             <h3 id="text4">Conclua com Facilidade o serviço : Conclua e receba o contrato.</h3>
         </div>
     </div>
+    
     <div class="container">
     <h1>Benefícios
     <img id="img2" src="img/ini.png" alt="img">
@@ -74,7 +78,7 @@
     </ol>
     <div class="space"></div>
   </div>
-  
+
 
    <footer>
         <p>&copy; 2024 Help Me. Todos os direitos reservados.</p>

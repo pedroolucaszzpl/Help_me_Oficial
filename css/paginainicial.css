@@ -11,6 +11,22 @@ body {
     font-family: 'Quicksand', sans-serif;
     margin-bottom: 80px;
 }
+.banner {
+    margin-top: -90px;
+    background: linear-gradient(rgba(135, 125, 204, 0.7), rgba(123, 112, 243, 0.7)), url('caminho/para/sua/imagem.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
 
 @font-face {
     font-family: 'Hanken Grotesk';
