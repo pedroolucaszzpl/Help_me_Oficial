@@ -19,6 +19,11 @@ if (!isset($_SESSION["usuario_id"]) && !isset($_SESSION["funcionario_id"])) {
     <link rel="stylesheet" href="./css/main.css">
     <link rel="icon" href=" ./img/logo.png">
     <title>Help Me</title>
+    <style>
+        #cont-b {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -99,24 +104,27 @@ if (!isset($_SESSION["usuario_id"]) && !isset($_SESSION["funcionario_id"])) {
                 <div>
                     <p class="title-container">Serviços Cadastrados na Help Me!</p>
                     <p class="desc">&nbsp;&nbsp;&nbsp;&nbsp;A Help Me oferece serviços rápidos e eficientes, garantindo soluções de qualidade sem complicações para seus clientes.</p>
+                    <button id="saiba_mais">Saiba Mais</button>
                 </div>
+
                 <div>
-                    <img class="distraction" src="https://img.freepik.com/fotos-premium/papel-de-parede-digital-abstrato-roxo-brilhante-linhas-e-curvas-de-neon_784938-169.jpg" alt="">
+                    <img class="distraction" src="img/geoServ.jpeg" alt="">
                 </div>
             </div>
-            <?php
-            include 'conexao.php';
 
-            // Consulta SQL para selecionar funções dos funcionários dos setores doméstico e empresarial
-            $sqlDomestico = "SELECT DISTINCT nome_profissao FROM profissao WHERE setor_profissao = 'domestico'";
-            $resultDomestico = $mysqli->query($sqlDomestico);
+            <div id="cont-b" class="cont-b">
+                <?php
+                include 'conexao.php';
 
-            $sqlEmpresarial = "SELECT DISTINCT nome_profissao FROM profissao WHERE setor_profissao = 'empresarial'";
-            $resultEmpresarial = $mysqli->query($sqlEmpresarial);
-            ?>
-            <div class="cont-b">
+                // Consulta SQL para selecionar funções dos funcionários dos setores doméstico e empresarial
+                $sqlDomestico = "SELECT DISTINCT nome_profissao FROM profissao WHERE setor_profissao = 'domestico'";
+                $resultDomestico = $mysqli->query($sqlDomestico);
+
+                $sqlEmpresarial = "SELECT DISTINCT nome_profissao FROM profissao WHERE setor_profissao = 'empresarial'";
+                $resultEmpresarial = $mysqli->query($sqlEmpresarial);
+                ?>
                 <div class="title">
-                    <h1>Serviços Domésticos<h1>
+                    <h1>Serviços Domésticos</h1>
                 </div>
                 <div class="desc-2">
                     <p> Os serviços domésticos abrangem tarefas como limpeza, organização, preparo de refeições e cuidado
@@ -125,13 +133,12 @@ if (!isset($_SESSION["usuario_id"]) && !isset($_SESSION["funcionario_id"])) {
                         do espaço.</p>
                     <img src="img/domesticos.png" alt="">
                 </div>
-                <div class="categorias">
+                <div class="categoriasD">
                     <?php
                     if ($resultDomestico->num_rows > 0) {
                         while ($row = $resultDomestico->fetch_assoc()) {
                     ?>
                             <div class='profissao'>
-
                                 <p class="funcao"><?php echo $row["nome_profissao"]; ?></p>
                             </div>
                     <?php
@@ -143,7 +150,7 @@ if (!isset($_SESSION["usuario_id"]) && !isset($_SESSION["funcionario_id"])) {
                 </div>
 
                 <div class="title">
-                    <h1>Serviços Empresariais<h1>
+                    <h1>Serviços Empresariais</h1>
                 </div>
                 <div class="desc-2">
                     <p> Serviços empresariais são atividades fundamentais para empresas, incluindo consultoria,
@@ -153,13 +160,12 @@ if (!isset($_SESSION["usuario_id"]) && !isset($_SESSION["funcionario_id"])) {
                         impulsionam o sucesso e a eficiência empresarial.</p>
                     <img src="img/empresarial.avif" alt="">
                 </div>
-                <div class="categorias">
+                <div class="categoriasE">
                     <?php
                     if ($resultEmpresarial->num_rows > 0) {
                         while ($row = $resultEmpresarial->fetch_assoc()) {
                     ?>
                             <div class='profissao'>
-
                                 <p class="funcao"><?php echo $row["nome_profissao"]; ?></p>
                             </div>
                     <?php
@@ -174,18 +180,17 @@ if (!isset($_SESSION["usuario_id"]) && !isset($_SESSION["funcionario_id"])) {
                 // Fecha a conexão com o banco de dados
                 $mysqli->close();
                 ?>
-
             </div>
         </div>
     </main>
-    <div class="space-footer">
-        <footer>
+    <footer>
+        <div class="space-footer">
             <p>&copy; 2024 Help Me. Todos os direitos reservados.</p>
-        </footer>
+        </div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <path fill="#cac1f3" fill-opacity="1" d="M0,256L48,250.7C96,245,192,235,288,224C384,213,480,203,576,192C672,181,768,171,864,176C960,181,1056,203,1152,197.3C1248,192,1344,160,1392,144L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
         </svg>
-    </div>
+    </footer>
     <script>
         function confirmLogout() {
             // Mostra um alerta perguntando se tem certeza que deseja deslogar
@@ -196,6 +201,15 @@ if (!isset($_SESSION["usuario_id"]) && !isset($_SESSION["funcionario_id"])) {
                 window.location.href = 'logout.php';
             }
         }
+
+        document.getElementById("saiba_mais").addEventListener("click", function() {
+            var elemento = document.getElementById("cont-b");
+            if (elemento.style.display === "none") {
+                elemento.style.display = "block";
+            } else {
+                elemento.style.display = "none";
+            }
+        });
     </script>
 </body>
 
