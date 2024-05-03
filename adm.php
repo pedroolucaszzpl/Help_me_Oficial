@@ -158,6 +158,7 @@ if (!isset($_SESSION["moderador_id"]) && !isset($_SESSION["moderador_id"])) {
             }
         }
     </script>
+    
 </body>
 
 </html>

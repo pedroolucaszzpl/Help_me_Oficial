@@ -1,0 +1,90 @@
+/* Estilo para o formulário de resposta */
+*{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+ }
+ 
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../img/fundo.png);
+    background-size: 100%;
+    height: 100vh;
+}
+
+/* Estilos para a seção de solicitação */
+.solicitacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ecf2ff;
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(161, 125, 209, 82);
+
+}
+
+.solicitacao p {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.btn-responder {
+    background-color: #857DD1;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-responder:hover {
+    background-color: #301934;
+}
+
+form {
+    background-color: #ecf2ff;
+    width: 50%;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(161, 125, 209, 82);
+    margin-top: 20px; /* Ajuste conforme necessário */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input[type="text"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    height: 38.4px;
+    margin: 20px;
+    border: 1px solid #301934;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form textarea {
+    resize: vertical; /* Permite redimensionamento vertical */
+}
+
+form input[type="submit"] {
+    background-color: #857dd1; /* Cor de fundo do botão */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #301934; /* Cor de fundo do botão mais escura ao passar o mouse */
+}
