@@ -85,20 +85,17 @@ body {
     text-align: center;
 }
 /* footer padrão */
+.space-footer{
+    margin-top:200px;  
+}
+
 footer {
-    background-color: #cac1f3;
     color: #fff;
     position: sticky;
     text-align: center;
     padding: 20px 0;
-    margin-bottom: -299px;
+    margin-bottom: -350px;
     width: 100%;
-}
-/* nav padrão*/
-svg {
-    margin-bottom: 0;
-    width: 100%;
-    fill: #cac1f3;
 }
 nav {
     width: 100%; 
