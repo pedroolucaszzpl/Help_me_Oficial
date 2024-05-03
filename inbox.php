@@ -122,11 +122,26 @@ if (!isset($_SESSION["usuario_id"]) && !isset($_SESSION["funcionario_id"])) {
                     if ($result_solicitacoes->num_rows > 0) {
                         // Exibir as solicitações
                         while ($row = $result_solicitacoes->fetch_assoc()) {
-                            echo '<div class="solicitacao">';
-                            echo '<p>Resposta: ' . $row["solicitacao_resposta"] . '</p>';
-                            echo '<p>Mensagem: ' . $row["solicitacao_mensagem"] . '</p>';
-                            echo '<p>Assunto: ' . $row["solicitacao_assunto"] . '</p>';
-                            echo '</div>';
+                            echo '<table border="1">';
+                            echo '<tr>';
+                            echo '<th>Assunto</th>';
+                            echo '<th>Mensagem</th>';
+                            echo '<th>Resposta</th>';
+                            echo '</tr>';
+
+                            echo '<tr>';
+                            echo '<td>' . $row["solicitacao_assunto"] . '</td>';
+                            echo '<td>' . $row["solicitacao_mensagem"] . '</td>';
+                            echo '<td>';
+                            if (empty($row["solicitacao_resposta"])) {
+                                echo 'Não respondida';
+                            } else {
+                                echo $row["solicitacao_resposta"];
+                            }
+                            echo '</td>';
+                            echo '</tr>';
+
+                            echo '</table>';
                         }
                     } else {
                         echo "Nenhuma solicitação encontrada para este email.";
