@@ -37,7 +37,7 @@
             </div>
             <div class="efetualog">
                 <img src="img/avatar.png" alt="Avatar">
-                <a href="logar.php">Login</a>
+                <a href="logout.php">Sair</a>
             </div>
         </div>
     </header>

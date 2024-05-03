@@ -1,0 +1,283 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    background-size: cover; /* Ajusta o dimensionamento da imagem */
+    background-position: center; /* Centraliza a imagem de fundo */
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 80px;
+}
+
+:root{
+    --white: #fff;
+    --lavanda: #cac1fe;
+    --darklav: #857dd1;
+    --dark: #301934;
+    --black: #000000;
+}
+
+a{
+    text-decoration: none;
+}
+nav {
+    width: 100%; 
+    height: 90px; 
+    background-color: #fff;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(50, 16, 202, 0.856); /* Adiciona uma sombra */
+
+}
+
+.space-footer {
+   margin-top: 250px;
+}
+
+
+footer {
+    background-color: rgb(202, 193, 254);
+    color: #fff;
+    position: sticky;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: -350px;
+    width: 100%;
+}
+/* nav padrão*/
+svg {
+    margin-bottom: 0;
+    width: 100%;
+    fill: rgb(202, 193, 254);;
+}
+
+#conteudo {
+    margin-bottom: 300px; /* Altura do footer */
+}
+
+.head{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #857dd1;
+}
+
+.logo{
+    margin-left: 30px;
+}
+.logo img{
+    width: 100px;
+}
+
+.avatar{
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+}
+.avatar img{
+    width: 40px;
+}
+.avatar a:hover{
+    color: #ccc;
+}
+
+.navigation{
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px #857dd1; /* Adiciona uma sombra */
+    height: 40px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.title{
+    color: #301934;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.linha{
+    width: 422px;
+    height: 3px;
+    background-color: #301934;
+    margin-bottom: 75px;
+}
+
+.logout-adm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    width: 70px;
+    height: 35px;
+}
+
+.logout-adm a{
+    color: white;
+    font-weight: bold;
+}
+
+.logout-adm:hover{
+    background-color: #cac1fe;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.name{
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+.solicita{
+    margin: 25px;
+}
+/* Estilo para a div das solicitações */
+.solicitacoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo para cada solicitação */
+.solicitacao {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 130%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 2px 4px rgba(50, 16, 202, 0.856);
+}
+
+
+/* Estilo para o botão de resposta */
+.responder {
+    background-color: #857dd1;
+    color: white;
+    border: none;
+    height: 20px;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.responder:hover {
+    background-color: #3b2bca;
+}
+
+.funcionarios{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+.nome{
+    font-weight: bold;
+    font-size: 14px;
+    color: #000000;
+}
+
+.desc{
+    font-weight: bold;
+    font-size: 10px;
+    color: #000000;
+}
+.person{
+    margin: 3% auto;
+    background-color: #ffffff;
+    border-radius: 20px;
+    width: 50%;
+    max-width: 150px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    box-shadow: 2px 2px 6px #857dd1;
+    transition: transform 0.3s ease;
+}
+.person:hover {
+    transform: translateY(-5px);
+    box-shadow: 2px 2px 6px #3b2bca;
+
+}
+
+.person img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 15px;
+}
+/* CSS para dispositivos móveis (tablets e celulares) */
+@media screen and (max-width: 1100px) {
+    .session {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }   
+
+    .s1{
+        margin:15px;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    
+
+    .title {
+        text-align: center;
+    }
+
+    .title p {
+        font-size: 18px;
+    }
+
+    .title-doubt {
+        width: 250px;
+        margin-top: 50px;
+    }
+
+    .modal-content {
+        width: 80%;
+    }
+
+    .form-duvida input[type="text"],
+    .form-duvida textarea {
+        width: 100%;
+        padding: 10px;
+        height: 38.4px;
+        margin-bottom: 10px;
+        border: 1px solid #301934;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .botao input {
+        width: 100%;
+    }
+}
+
+
+/* alterações feitas */
