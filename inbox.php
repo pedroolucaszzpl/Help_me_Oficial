@@ -99,76 +99,53 @@ if (!isset($_SESSION["usuario_id"]) && !isset($_SESSION["funcionario_id"])) {
         </div>
     </header>
     <main>
-        <div class="container">
-            <div class="title">
-                <h1>Profissões mais procuradas!</h1>
-                <div class="linha"></div>
-            </div>
-            <div class="categorias">
-                <?php
-                // Supondo que você já tenha uma conexão com o banco de dados
-                include 'conexao.php';
-                // Consulta SQL para selecionar funções distintas da tabela funcionario
-                $query = "SELECT DISTINCT funcao_user FROM funcionario LIMIT 8";
+        <div class="container" id="solicitacoes-container">
+            <?php
+            include 'conexao.php';
 
-                // Executar a consulta
-                $result = mysqli_query($mysqli, $query);
+            // Verificar se o usuário está logado e tem um ID definido
+            if (isset($_SESSION['usuario_id']) || isset($_SESSION['funcionario_id'])) {
+                $usuario_id = isset($_SESSION['usuario_id']) ? $_SESSION['usuario_id'] : $_SESSION['funcionario_id'];
 
-                // Verificar se a consulta retornou algum resultado
-                if (mysqli_num_rows($result) > 0) {
-                    // Loop pelos resultados e exibir cada função dentro de uma div
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        echo "<div class='profissao'>";
-                        echo "<p>" . $row['funcao_user'] . "</p>";
-                        echo "</div>";
-                    }
-                } else {
-                    // Se não houver funções na tabela, exibir uma mensagem
-                    echo "Nenhuma profissão encontrada.";
-                }
+                // Consulta para buscar o email do usuário com base no ID
+                $sql_email = "SELECT email_user FROM usuario WHERE id_user = '$usuario_id'";
+                $result_email = $mysqli->query($sql_email);
 
-                // Fechar a conexão com o banco de dados
-                mysqli_close($mysqli);
-                ?>
+                if ($result_email && $result_email->num_rows > 0) {
+                    $row_email = $result_email->fetch_assoc();
+                    $email = $row_email['email_user'];
 
-            </div>
-            <div class="profissionais">
-                <div class="title">
-                    <h1>Profissionais da sua região</h1>
-                    <div class="linha"></div>
-                </div>
-                <div class="perfis">
-                    <?php
-                    include 'conexao.php';
+                    // Consulta para buscar as solicitações relacionadas ao email do usuário logado
+                    $sql_solicitacoes = "SELECT solicitacao_resposta, solicitacao_mensagem, solicitacao_assunto FROM solicitacao WHERE solicitacao_email = '$email'";
+                    $result_solicitacoes = $mysqli->query($sql_solicitacoes);
 
-                    $sql = "SELECT nome_user, funcao_user FROM funcionario";
-                    $result = $mysqli->query($sql);
-
-                    if ($result->num_rows > 0) {
-                        // Loop pelos resultados da consulta
-                        while ($row = $result->fetch_assoc()) {
-                    ?>
-                            <div class="person">
-                                <div>
-                                    <img src="img/avatar.png" alt="">
-                                </div>
-                                <p class="nome"><?php echo $row["nome_user"]; ?></p>
-                                <p class="desc"><?php echo $row["funcao_user"]; ?></p>
-                            </div>
-                    <?php
+                    if ($result_solicitacoes->num_rows > 0) {
+                        // Exibir as solicitações
+                        while ($row = $result_solicitacoes->fetch_assoc()) {
+                            echo '<div class="solicitacao">';
+                            echo '<p>Resposta: ' . $row["solicitacao_resposta"] . '</p>';
+                            echo '<p>Mensagem: ' . $row["solicitacao_mensagem"] . '</p>';
+                            echo '<p>Assunto: ' . $row["solicitacao_assunto"] . '</p>';
+                            echo '</div>';
                         }
                     } else {
-                        echo "Nenhum funcionário encontrado.";
+                        echo "Nenhuma solicitação encontrada para este email.";
                     }
+                } else {
+                    echo "Email não encontrado para este ID de usuário.";
+                }
+            } else {
+                echo "Usuário não está logado.";
+            }
 
-                    // Fecha a conexão com o banco de dados
-                    $mysqli->close();
-                    ?>
-                </div>
-            </div>
+            // Fechar a conexão com o banco de dados
+            $mysqli->close();
+            ?>
+
         </div>
     </main>
-    <div class="space-footer">
+
+    <div class="space-footer-inbox">
         <footer>
             <p>&copy; 2024 Help Me. Todos os direitos reservados.</p>
         </footer>

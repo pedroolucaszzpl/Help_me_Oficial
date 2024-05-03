@@ -40,6 +40,17 @@ nav {
    
 }
 
+.space-footer-inbox {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    padding: 10px 0;
+    text-align: center;
+}
+
 footer {
     color: #fff;
     position: sticky;
@@ -93,6 +104,9 @@ footer {
     border-radius: 5px;
     margin-left: 5px;
     cursor: pointer;
+}
+.inbox img{
+    width: 30px;
 }
 
 .head{
@@ -680,3 +694,21 @@ box-shadow: 0px 2px 5px #878787;
     margin-top: 5%;
 }
 
+/* inbox */
+.solicitacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ecf2ff;
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(161, 125, 209, 82);
+
+}
+
+.solicitacao p {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
