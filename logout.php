@@ -18,7 +18,7 @@ if (isset($_SESSION['funcionario_id'])) {
     exit();
 } else {
     // Se o usuário não estiver logado, redirecione-o para a página de login
-    header("Location: logar.php");
+    header("Location: index.php");
     exit();
 }
 ?>
