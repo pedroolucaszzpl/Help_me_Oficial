@@ -183,14 +183,14 @@ if (!isset($_SESSION["usuario_id"]) && !isset($_SESSION["funcionario_id"])) {
             </div>
         </div>
     </main>
-    <footer>
-        <div class="space-footer">
+    <div class="space-footer">
+        <footer>
             <p>&copy; 2024 Help Me. Todos os direitos reservados.</p>
-        </div>
+        </footer>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#cac1f3" fill-opacity="1" d="M0,256L48,250.7C96,245,192,235,288,224C384,213,480,203,576,192C672,181,768,171,864,176C960,181,1056,203,1152,197.3C1248,192,1344,160,1392,144L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            <path fill="#cac1fe" fill-opacity="1" d="M0,128L80,138.7C160,149,320,171,480,165.3C640,160,800,128,960,117.3C1120,107,1280,117,1360,122.7L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
         </svg>
-    </footer>
+    </div>
     <script>
         function confirmLogout() {
             // Mostra um alerta perguntando se tem certeza que deseja deslogar
