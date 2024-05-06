@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'conexao.php';
-if (!isset($_SESSION["moderador_id"]) && !isset($_SESSION["moderador_id"])) {
+if (!isset($_SESSION["moderador_id"]) && !isset($_SESSION["chefe"])) {
     header('location: index.php');
     exit();
 }
@@ -60,15 +60,15 @@ if (!isset($_SESSION["moderador_id"]) && !isset($_SESSION["moderador_id"])) {
                 ?>
             </div>
             <?php
-
-            // Verifica se a sessão chefe_id está setada
-            if (isset($_SESSION["chefe"])) {
+            // Verifica se a sessão chefe está setada e é verdadeira
+            if (isset($_SESSION["chefe"]) && $_SESSION["chefe"] == true) {
                 echo '<div class="avatar">';
                 echo '    <img src="img/useradd.png" alt="">';
                 echo '    <a class="name" href="admcad.php">Cadastre um novo moderador!</a>';
                 echo '</div>';
             }
             ?>
+
             <div class='logout-adm'>
                 <a href='#' onclick='confirmLogout()'>Sair</a>
             </div>
@@ -77,6 +77,14 @@ if (!isset($_SESSION["moderador_id"]) && !isset($_SESSION["moderador_id"])) {
         </div>
         </div>
         <div class="navigation">
+        <?php
+            // Verifica se a sessão chefe está setada e é verdadeira
+            if (isset($_SESSION["chefe"]) && $_SESSION["chefe"] == true) {
+                echo '<div class="avatar">';
+                echo '<a href="lmoderador.php" class="responder">Acessar monitores</a>';
+                echo '</div>';
+            }
+            ?>           
         </div>
         </div>
     </header>

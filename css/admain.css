@@ -39,6 +39,16 @@ nav {
    margin-top: 250px;
 }
 
+.space-footer-lista {
+    margin-bottom: 0px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white; /* Adicione a cor de fundo desejada */
+    border-top: 1px solid black; /* Adicione uma borda superior se desejar separar a div do conteúdo */
+    padding: 10px;
+    text-align: center;
+}
 
 footer {
     background-color: rgb(202, 193, 254);
@@ -280,4 +290,39 @@ svg {
 }
 
 
-/* alterações feitas */
+/* alterações feitas lista */
+
+.banir{
+    background-color: red;
+    color: white;
+    border: 1px rgb(101, 0, 0);
+    width: 70px;
+    height: 20px;
+    border-radius: 5px;
+}
+.banir:hover{
+    background-color: rgb(101, 0, 0);
+}
+
+.action{
+    display: flex;
+    justify-content: center;
+}
+.container-lista{
+    display: flex;
+    justify-content: center;
+}
+table {
+    margin-top: 15px;
+    width: 50%;
+    border-collapse: collapse;
+    border: 2px solid #301934; /* Adiciona uma borda roxa à tabela */
+}
+th, td {
+    border: 1px solid #301934; /* Adiciona bordas roxas às células */
+    padding: 8px;
+}
+th {
+    background-color: #301934; /* Define a cor de fundo roxa para as células de cabeçalho */
+    color: white; /* Define a cor do texto como branco */
+}
