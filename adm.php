@@ -59,10 +59,16 @@ if (!isset($_SESSION["moderador_id"]) && !isset($_SESSION["moderador_id"])) {
                 }
                 ?>
             </div>
-            <div class="avatar">
-                <img src="img/useradd.png" alt="">
-                <a class="name" href="admcad.php">Cadastre um novo moderador!</a>
-            </div>
+            <?php
+
+            // Verifica se a sessão chefe_id está setada
+            if (isset($_SESSION["chefe"])) {
+                echo '<div class="avatar">';
+                echo '    <img src="img/useradd.png" alt="">';
+                echo '    <a class="name" href="admcad.php">Cadastre um novo moderador!</a>';
+                echo '</div>';
+            }
+            ?>
             <div class='logout-adm'>
                 <a href='#' onclick='confirmLogout()'>Sair</a>
             </div>
@@ -158,7 +164,7 @@ if (!isset($_SESSION["moderador_id"]) && !isset($_SESSION["moderador_id"])) {
             }
         }
     </script>
-    
+
 </body>
 
 </html>

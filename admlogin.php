@@ -19,6 +19,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Verifica se a senha fornecida corresponde à senha no banco de dados
         if (password_verify($password, $db_password)) {
             // Senha válida, redireciona para a página de administrador
+            if ($row_moderador['cargo_mod'] == 'chefe') {
+                $_SESSION["chefe"] = true;
+            }
             header('location:adm.php');
             exit();
         } else {
@@ -27,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     } else {
         // Senha incorreta ou credenciais inválidas
-        echo "Credenciais inválidas errada";
+        echo "Credenciais inválidas";
     }
 } else {
     echo 'Dados não inseridos';

@@ -32,8 +32,6 @@
 
             </div>
 
-            <a class="cadastro" href="redSenha.php">Esqueceu sua senha?
-                 Clique aqui!</a>
 
             <div id="linhas">
                 <div class="line"></div>
