@@ -27,10 +27,10 @@ if (!isset($_SESSION["usuario_id"]) && !isset($_SESSION["funcionario_id"])) {
 </head>
 
 <body>
-    <header>
+<header>
         <div class="head">
             <div class="logo">
-                <a href="main.php">
+                <a href="index.php">
                     <img src="img/logo.png" alt="Logo Help Me">
                 </a>
             </div>
@@ -83,11 +83,14 @@ if (!isset($_SESSION["usuario_id"]) && !isset($_SESSION["funcionario_id"])) {
         </div>
         <div class="navigation">
             <div class="items-bar">
+            <div class="item">
+                    <a href="main.php">Página Inicial</a>
+                </div>
                 <div class="item">
                     <a href="contratacoes50.php">Contratações +50</a>
                 </div>
                 <div class="item">
-                    <a href="">Serviços</a>
+                    <a href="servicos.php">Serviços</a>
                 </div>
             </div>
             <div class="search">
@@ -95,6 +98,11 @@ if (!isset($_SESSION["usuario_id"]) && !isset($_SESSION["funcionario_id"])) {
                     <input type="image" id="lupa" src="img/lupa.png" alt="lupa">
                     <input name='termo' type="text" placeholder=" O que você precisa?" class="ask">
                 </form>
+            </div>
+            <div class="inbox">
+                <a href="inbox.php">
+                    <img src="img/inbox.png" alt="">
+                </a>
             </div>
         </div>
     </header>

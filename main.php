@@ -17,6 +17,8 @@ if (!isset($_SESSION["usuario_id"]) && !isset($_SESSION["funcionario_id"])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Foldit:wght@300&family=Oswald:wght@200&family=Quicksand:wght@500&family=Space+Grotesk:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Foldit:wght@300&family=Oswald:wght@200&family=Quicksand:wght@500&family=Space+Grotesk:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
     <link rel="icon" href=" ./img/logo.png">
     <title>Help Me</title>
 </head>
@@ -78,6 +80,9 @@ if (!isset($_SESSION["usuario_id"]) && !isset($_SESSION["funcionario_id"])) {
         </div>
         <div class="navigation">
             <div class="items-bar">
+            <div class="item">
+                    <a href="main.php">Página Inicial</a>
+                </div>
                 <div class="item">
                     <a href="contratacoes50.php">Contratações +50</a>
                 </div>
@@ -109,7 +114,7 @@ if (!isset($_SESSION["usuario_id"]) && !isset($_SESSION["funcionario_id"])) {
                 // Supondo que você já tenha uma conexão com o banco de dados
                 include 'conexao.php';
                 // Consulta SQL para selecionar funções distintas da tabela funcionario
-                $query = "SELECT DISTINCT funcao_user FROM funcionario LIMIT 8";
+                $query = "SELECT DISTINCT * FROM profissao LIMIT 8";
 
                 // Executar a consulta
                 $result = mysqli_query($mysqli, $query);
@@ -119,7 +124,8 @@ if (!isset($_SESSION["usuario_id"]) && !isset($_SESSION["funcionario_id"])) {
                     // Loop pelos resultados e exibir cada função dentro de uma div
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<div class='profissao'>";
-                        echo "<p>" . $row['funcao_user'] . "</p>";
+                        echo "<img>" . $row['imagens'] . "</img>";
+                        echo "<p>" . $row['nome_profissao'] . "</p>";
                         echo "</div>";
                     }
                 } else {
