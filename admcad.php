@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Foldit:wght@300&family=Oswald:wght@200&family=Quicksand:wght@500&family=Space+Grotesk:wght@300&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <title>Help Me</title>
 </head>
 
@@ -41,10 +42,9 @@
         </div>
     </div>
     <?php
+$mysqli = new mysqli("localhost", "root", "", "db_helpme");
 
-$conn = new mysqli("localhost", "root", "", "db_helpme");
-
-if ($conn->connect_error) {
+if ($mysqli->connect_error) {
     die("Erro na conexão: " . $conn->connect_error);
 }
 
@@ -57,16 +57,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
     $sql = "INSERT INTO moderador (moderador_usuario, moderador_email, moderador_senha) VALUES (?, ?, ?)";
-    $stmt = $conn->prepare($sql);
+    $stmt = $mysqli->prepare($sql);
     $stmt-> bind_param("sss", $nome, $email, $senha_hash);
     $stmt->execute();
 
-    header ('Location: admlog.php');
-    exit();
+    // Verifica se a inserção foi bem-sucedida
+    if ($stmt->affected_rows > 0) {
+        // Cadastro bem-sucedido, exibe o alerta do SweetAlert
+        echo '<script>
+        Swal.fire({
+            icon: "success",
+            title: "Cadastro realizado com sucesso!",
+            showConfirmButton: false,
+            timer: 1500
+        }).then(() => {
+            window.location.href = "adm.php";
+        });
+        </script>';
+    } else {
+        // Caso contrário, exibe uma mensagem de erro
+        echo '<script>alert("Erro ao cadastrar. Tente novamente mais tarde.");</script>';
+    }
+
+    $stmt->close();
 }
 
-$conn->close();
+$mysqli->close();
 ?>
+
 
 </body>
 
