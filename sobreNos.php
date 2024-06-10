@@ -51,16 +51,16 @@
             <h3>Desde o início, nos comprometemos em oferecer uma plataforma confiável e acessível, conectando clientes com profissionais qualificados em diversas áreas de atuação. Nossa missão é proporcionar uma experiência única, onde a confiança, a eficiência e a satisfação do cliente são prioridades absolutas.</h3>
             <h3>Aqui na <strong>Help Me</strong>, valorizamos a transparência, a ética e o profissionalismo em todas as interações. Nosso time é composto por indivíduos dedicados e talentosos, sempre empenhados em superar as expectativas e em oferecer soluções personalizadas para cada necessidade.</h3>
         </div>
-        <h1>Criadores</h1>
+        <h1>Desenvolvedores</h1>
         <div id="criadores">
             <div class="criador-container">
-                <img class="criador" src="img/pl.jpeg" alt="Nome do Criador 1">
+                <img class="criador" src="img/pedro.JPG" alt="Nome do Criador 1">
                 <div class="criador-overlay">
                     <p class="criador-text">Pedro Lucas </p>
                 </div>
             </div>
             <div class="criador-container">
-                <img class="criador" src="img/yas.jpeg" alt="Nome do Criador 2">
+                <img class="criador" src="img/yasmin.JPG" alt="Nome do Criador 2">
                 <div class="criador-overlay">
                     <p class="criador-text">Yasmin</p>
                 </div>
@@ -72,13 +72,13 @@
                 </div>
             </div>
             <div class="criador-container">
-                <img class="criador" src="img/jp .jpeg" alt="Nome do Criador 4">
+                <img class="criador" src="img/joao.JPG" alt="Nome do Criador 4">
                 <div class="criador-overlay">
                     <p class="criador-text">João Paulo</p>
                 </div>
             </div>
             <div class="criador-container">
-                <img class="criador" src="img/cibs.jpeg" alt="Nome do Criador 5">
+                <img class="criador" src="img/cibeli.JPG" alt="Nome do Criador 5">
                 <div class="criador-overlay">
                     <p class="criador-text">Cibeli</p>
                 </div>

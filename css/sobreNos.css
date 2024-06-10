@@ -217,16 +217,15 @@ h3 {
 .criador {
     border-radius: 50%;
     width: 130px; /* Aumente o tamanho da imagem */
-    height: 150px; /* Aumente o tamanho da imagem */
+    height: 130px; /* Aumente o tamanho da imagem */
     transition: transform 0.3s ease-in-out;
     border: 5px solid #785dd1; /* Adiciona uma borda sólida de 3px com a cor #785dd1 */
 }
 
-.criador-container:hover .criador {
-    transform: scale(1.1);
-}
+
 
 .criador-overlay {
+    border-radius: 50%;
     position: absolute;
     top: 0;
     left: 0;
