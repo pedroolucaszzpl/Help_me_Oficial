@@ -121,16 +121,18 @@ if (!isset($_SESSION["usuario_id"]) && !isset($_SESSION["funcionario_id"])) {
             </div>
 
             <div id="cont-b" class="cont-b">
-                <?php
-                include 'conexao.php';
+            <?php
+include 'conexao.php';
 
-                // Consulta SQL para selecionar funções dos funcionários dos setores doméstico e empresarial
-                $sqlDomestico = "SELECT DISTINCT nome_profissao FROM profissao WHERE setor_profissao = 'domestico'";
-                $resultDomestico = $mysqli->query($sqlDomestico);
+// Consulta SQL para selecionar funções dos funcionários do setor doméstico
+$sqlDomestico = "SELECT DISTINCT nome_profissao, imagens FROM profissao WHERE setor_profissao = 'domestico'";
+$resultDomestico = $mysqli->query($sqlDomestico);
 
-                $sqlEmpresarial = "SELECT DISTINCT nome_profissao FROM profissao WHERE setor_profissao = 'empresarial'";
-                $resultEmpresarial = $mysqli->query($sqlEmpresarial);
-                ?>
+// Consulta SQL para selecionar funções dos funcionários do setor empresarial
+$sqlEmpresarial = "SELECT DISTINCT nome_profissao, imagens FROM profissao WHERE setor_profissao = 'empresarial'";
+$resultEmpresarial = $mysqli->query($sqlEmpresarial);
+?>
+
                 <div class="title">
                     <h1>Serviços Domésticos</h1>
                 </div>
@@ -146,9 +148,12 @@ if (!isset($_SESSION["usuario_id"]) && !isset($_SESSION["funcionario_id"])) {
                     if ($resultDomestico->num_rows > 0) {
                         while ($row = $resultDomestico->fetch_assoc()) {
                     ?>
-                            <div class='profissao'>
-                                <p class="funcao"><?php echo $row["nome_profissao"]; ?></p>
-                            </div>
+                            <?php  
+                             echo "<div class='profissao'>";
+                             echo "<p class='funcao'>" . $row['nome_profissao'] . "</p>";
+                             echo '<img class="icone" src="' . $row['imagens'] . '" alt="Descrição da imagem">';
+                             echo "</div>";
+                        ?>
                     <?php
                         }
                     } else {
@@ -173,9 +178,12 @@ if (!isset($_SESSION["usuario_id"]) && !isset($_SESSION["funcionario_id"])) {
                     if ($resultEmpresarial->num_rows > 0) {
                         while ($row = $resultEmpresarial->fetch_assoc()) {
                     ?>
-                            <div class='profissao'>
-                                <p class="funcao"><?php echo $row["nome_profissao"]; ?></p>
-                            </div>
+                             <?php  
+                             echo "<div class='profissao'>";
+                             echo "<p class='funcao'>" . $row['nome_profissao'] . "</p>";
+                             echo '<img class="icone" src="' . $row['imagens'] . '" alt="Descrição da imagem">';
+                             echo "</div>";
+                        ?>
                     <?php
                         }
                     } else {

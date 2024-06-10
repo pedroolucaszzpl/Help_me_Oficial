@@ -289,6 +289,10 @@ footer {
     transition: transform 0.3s ease;
 }
 
+img.icone{
+    width: 50px;
+}
+
 .profissao:hover{
     background: linear-gradient(to right, #cac1fe, #857dd1);
     color: #fff;

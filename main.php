@@ -124,7 +124,7 @@ if (!isset($_SESSION["usuario_id"]) && !isset($_SESSION["funcionario_id"])) {
                     // Loop pelos resultados e exibir cada função dentro de uma div
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<div class='profissao'>";
-                        echo "<img>" . $row['imagens'] . "</img>";
+                        echo '<img class="icone" src="' . $row['imagens'] . '" alt="Descrição da imagem">';
                         echo "<p>" . $row['nome_profissao'] . "</p>";
                         echo "</div>";
                     }
