@@ -1,3 +1,11 @@
+<?php
+session_start();
+include 'conexao.php';
+if (!isset($_SESSION["moderador_id"]) && !isset($_SESSION["chefe"])) {
+    header('location: index.php');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 

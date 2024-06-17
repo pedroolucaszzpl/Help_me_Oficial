@@ -27,7 +27,7 @@ if (!isset($_SESSION["usuario_id"]) && !isset($_SESSION["funcionario_id"])) {
     <header>
         <div class="head">
             <div class="logo">
-                <a href="index.php">
+                <a href="main.php">
                     <img src="img/logo.png" alt="Logo Help Me">
                 </a>
             </div>
