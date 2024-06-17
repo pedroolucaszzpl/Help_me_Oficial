@@ -118,7 +118,7 @@
   }
   
   input#botao_login {
-     background-color: #857DD1;
+     background-color: #4b81ff;
      color:  #ffff;
      padding: 10px;
      border: none;
@@ -129,7 +129,7 @@
      margin: 10px;
   }
   input#botao_login:hover{
-     background-color: #301934;
+     background-color: #4d4aff;
      
   }
   
@@ -186,7 +186,7 @@
   }
   
   .content {
-     background-color: #cac1fe;
+     background-color: #ffffff;
      opacity: 90% ;
      margin-top: 1%;
      border-radius: 20px;
